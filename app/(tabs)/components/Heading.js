@@ -6,7 +6,7 @@ export default function Heading({title}) {
         <View style={styles.container}>
             {/* <View style={styles.containerTrapezoid}></View> */}
                 <Svg height="150" width="300" style={styles.trapezoid}>
-                    <Polygon points="0,150 300,150 250,0 50, 0" fill="#bde6deff" />
+                    <Polygon points="0,150 300,150 250,0 50, 0" fill="#707070ff" />
                 </Svg>
             {/* <View style={styles.containerHeading}> */}
                 <Text style={styles.headingText}>{title}</Text>

@@ -1,5 +1,6 @@
+import * as ImagePicker from "expo-image-picker";
 import { useState } from "react";
-import { StyleSheet, TextInput, View } from "react-native";
+import { Button, Image, StyleSheet, TextInput, View } from "react-native";
 import Heading from "./components/Heading";
 import SelectionButton from "./components/SelectionButton";
 
@@ -7,7 +8,21 @@ export default function Resources() {
 
     const [text, setText] = useState("")
 
+    const [image, setImage] = useState(null);
+
+    const pickImage = async () => {
+        const result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.Images,
+        });
+
+        if (!result.canceled) {
+            setImage(result.assets[0].uri);
+        }
+    };
+
     return (
+
+        
         <View style={styles.container}>
             <Heading title="Resources"></Heading>
 
@@ -28,7 +43,11 @@ export default function Resources() {
                 style={styles.txtInput}
             />
             </View>
+
+            <Button title="Select a resource image" onPress={pickImage} color="#8a8a8aff" />
+            {image && <Image source={{ uri: image }} style={{ width: 200, height: 200, marginTop: 20 }} />}
         </View>
+        
     )
 }
 
@@ -40,7 +59,7 @@ const styles = StyleSheet.create({
     },
 
     txtInput: {
-        backgroundColor: "#77ade4ff",
+        backgroundColor: "#6d6d6dff",
         padding: 10,
         height: 50,
         fontSize: 20,

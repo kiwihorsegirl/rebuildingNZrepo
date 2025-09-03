@@ -13,7 +13,7 @@ export default function HomepageButton({ title, onPress }) {
 const styles = StyleSheet.create({
     button: {
         padding: 10,
-        backgroundColor: "#862f77ff",
+        backgroundColor: "#777777ff",
         width: "70%",
     },
     container: {

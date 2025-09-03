@@ -20,6 +20,15 @@ export default function Emergency() {
         <TouchableOpacity style={styles.dropdown} onPress={() => setVisible(true)}>
             <Text style={styles.buttonText}>{selected}</Text>
         </TouchableOpacity>
+        {visible && (
+            <View style={{ backgroundColor: "#e0e0e0", width: "70%" }}>
+                {options.map((item, index) => (
+                <TouchableOpacity key={index} onPress={() => onSelect(item)} style={{ padding: 10 }}>
+                    <Text>{item}</Text>
+                </TouchableOpacity>
+                ))}
+            </View>
+        )}
       </View>
     )
 }
@@ -27,7 +36,7 @@ export default function Emergency() {
 const styles = StyleSheet.create({
     dropdown: {
         padding: 10,
-        backgroundColor: "#a5e037ff",
+        backgroundColor: "#c9c9c9ff",
         width: "70%"
     },
      buttonText: {

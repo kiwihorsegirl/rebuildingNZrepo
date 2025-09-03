@@ -13,7 +13,7 @@ export default function SelectionButton({ title, onPress }) {
 const styles = StyleSheet.create({
     button: {
         padding: 10,
-        backgroundColor: "#73bdb0ff",
+        backgroundColor: "#6e6e6eff",
         width: "70%"
     },
     container: {
