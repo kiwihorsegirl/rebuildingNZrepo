@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1128.02 800.21">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-3 {
+        fill: #686868;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+
+      .cls-5 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-6 {
+        clip-path: url(#clippath-3);
+      }
+
+      .cls-7 {
+        clip-path: url(#clippath-2);
+      }
+
+      .cls-8 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-9 {
+        fill: #725235;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-4" width="564.01" height="304.6"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <rect class="cls-4" x="564.01" width="564.01" height="304.6"/>
+    </clipPath>
+    <clipPath id="clippath-2">
+      <polygon class="cls-4" points="759.7 .24 759.7 .24 880.44 .24 880.44 800.21 759.7 800.21 759.7 .24"/>
+    </clipPath>
+    <clipPath id="clippath-3">
+      <polygon class="cls-4" points="366.17 .24 366.17 .24 245.43 .24 245.43 800.21 366.17 800.21 366.17 .24"/>
+    </clipPath>
+  </defs>
+  <g>
+    <g id="_Mirror_Repeat_" data-name="&amp;lt;Mirror Repeat&amp;gt;">
+      <g class="cls-8">
+        <polyline class="cls-2" points=".44 .24 169.72 304.1 598.29 304.1"/>
+      </g>
+    </g>
+    <g id="_Mirror_Repeat_-2" data-name="&amp;lt;Mirror Repeat&amp;gt;">
+      <g class="cls-5">
+        <polyline class="cls-2" points="1127.58 .24 958.29 304.1 529.72 304.1"/>
+      </g>
+    </g>
+  </g>
+  <g>
+    <g id="_Mirror_Repeat_-3" data-name="&amp;lt;Mirror Repeat&amp;gt;">
+      <g class="cls-7">
+        <rect class="cls-9" x="759.7" y=".24" width="120.74" height="799.97"/>
+      </g>
+    </g>
+    <g id="_Mirror_Repeat_-4" data-name="&amp;lt;Mirror Repeat&amp;gt;">
+      <g class="cls-6">
+        <rect class="cls-9" x="245.43" y=".24" width="120.74" height="799.97" transform="translate(611.6 800.45) rotate(180)"/>
+      </g>
+    </g>
+  </g>
+  <rect class="cls-3" x="219.99" y="387.48" width="167.81" height="38.55" rx="6" ry="6"/>
+  <rect class="cls-3" x="738.16" y="387.48" width="167.81" height="38.55" rx="6" ry="6"/>
+  <rect class="cls-1" x="266.47" y="427.44" width="74.83" height="20.41" transform="translate(-133.75 741.53) rotate(-90)"/>
+  <rect class="cls-1" x="780.11" y="427.44" width="74.83" height="20.41" transform="translate(379.89 1255.17) rotate(-90)"/>
+</svg>
