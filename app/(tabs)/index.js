@@ -1,115 +1,86 @@
-// import { NavigationContainer } from '@react-navigation/native';
-// import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from "expo-font";
 import { useRouter } from "expo-router";
-import { StyleSheet, Text, View } from "react-native"; //Button
+import { Dimensions, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import Rucksack from "../../assets/images/rucksack.svg";
-import Heading from "./components/Heading";
+import BackgroundStyling from "./components/BackgroundStyling";
 import HomepageButton from "./components/HomepageButton";
 
+const { width } = Dimensions.get("window");
 
-
-
-// const Stack = createNativeStackNavigator();
-
-// function HomeScreen({ navigation }) {
-
-//   return (
-
-//     <View
-//       style={{
-//         flex: 1,
-//         justifyContent: "center",
-//         alignItems: "center",
-//       }}
-//     >
-      
-
-//     <View 
-//     style={styles.img}
-//     >
-//       {/* <Svg width={150} height={150}> */}
-//         {/* <Rucksack width={150} height={150} /> */}
-//         <Rucksack />
-//     {/* </Svg> */}
-    
-//     {/* <Svg width={150} height={150}>
-//     <Image href={require("../../assets/images/rucksack.svg")} width={150} height={150} />
-//   </Svg> */}
-
-  
-//     </View>
-
-//       <Heading title=""></Heading>
-      
-//       <View style={styles.headingBox}>
-//         <Text style={{ color: "black", fontFamily: "Boogaloo", fontSize: 36}}>{"Rebuilding New Zealand"}</Text>
-
-//         {/* <View style={styles.center}> */}
-//           {/* <HomepageButton title="Emergency" onPress={()=> navigation.navigate("Emergency")} />
-//           <HomepageButton title="Resources" onPress={()=> navigation.navigate("Resources")} />
-//           <HomepageButton title="Rebuilding" onPress={()=> navigation.navigate("Rebuilding")} />
-//           <HomepageButton title="Community" onPress={()=> navigation.navigate("Community")} /> */}
-//         {/* </View> */}
-
-//       <HomepageButton title="Emergency" onPress={() => router.push("/Emergency")} />
-//       <HomepageButton title="Resources" onPress={() => router.push("/Resources")} />
-//       <HomepageButton title="Rebuilding" onPress={() => router.push("/Rebuilding")} />
-//       <HomepageButton title="Community" onPress={() => router.push("/Community")} />
-//         </View>
-//     </View>
-    
-//   );
-// }
+// SVG natural viewBox
+const viewBoxWidth = 1127.14;
+const viewBoxHeight = 799.97;
+const aspectRatio = viewBoxWidth / viewBoxHeight;
 
 export default function Index() {
-    const router = useRouter();
-    
-     const [fontsLoaded] = useFonts({
+  const router = useRouter();
+
+  const [fontsLoaded] = useFonts({
     Boogaloo: require("../../assets/fonts/Boogaloo-Regular.ttf"),
-    Overpass: require("../../assets/fonts/Overpass-Regular.ttf")
-    });    
+    Overpass: require("../../assets/fonts/Overpass-Regular.ttf"),
+  });
 
-
-    if (!fontsLoaded) {
-      return null;
-    }    
+  if (!fontsLoaded) return null;
 
   return (
-    
-    <View style={styles.container}>
-      <View style={styles.img}>
-        <Rucksack />
-      </View>
+    <BackgroundStyling>
+      <SafeAreaView style={styles.container}>
+        {/* ScrollView ensures content can scroll if needed */}
+        <ScrollView contentContainerStyle={styles.scrollContainer}>
+          {/* Top SVG */}
+          <Rucksack
+            width={width}             // full screen width
+            height={width / aspectRatio} // dynamic height
+            preserveAspectRatio="xMidYMid meet"
+          />
 
-      <Heading title="" />
+          {/* Heading */}
+          <View style={styles.headingBox}>
+            <Text style={styles.headingText}>Rebuilding New Zealand</Text>
+          </View>
 
-      <View style={styles.headingBox}>
-        <Text style={{ color: "black", fontFamily: "Boogaloo", fontSize: 36 }}>
-          Rebuilding New Zealand
-        </Text>
-
-        <HomepageButton title="Emergency" onPress={() => router.push("/Emergency")} />
-        <HomepageButton title="Resources" onPress={() => router.push("/Resources")} />
-        <HomepageButton title="Rebuilding" onPress={() => router.push("/Rebuilding")} />
-        <HomepageButton title="Community" onPress={() => router.push("/Community")} />
-      </View>
-    </View>
-
+          {/* Buttons */}
+          <View style={styles.headingBoxBtm}>
+            <HomepageButton title="Emergency" onPress={() => router.push("/Emergency")} />
+            <HomepageButton title="Resources" onPress={() => router.push("/Resources")} />
+            <HomepageButton title="Rebuilding" onPress={() => router.push("/Rebuilding")} />
+            <HomepageButton title="Community" onPress={() => router.push("/Community")} />
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </BackgroundStyling>
   );
 }
 
 const styles = StyleSheet.create({
-    center: {
-      justifyContent: "center"
-    },
-    headingBox: {
-      backgroundColor: "#838383ff",
-      padding: 30
-    },
-    img: {
-      width: 150,
-      height: 150,
-      marginBottom: 20
-    }
-})
+  container: {
+    flex: 1,
+    // backgroundColor: "#3d2515ff",
+  },
+  scrollContainer: {
+    alignItems: "center",      // center horizontally
+  },
+  headingBox: {
+    backgroundColor: "#838383ff",
+    padding: 30,
+    // marginTop: 10,
+    marginBottom: 10,
+    marginHorizontal: 40,
+    width: "90%",              // optional, keeps it responsive
+  },
+  headingBoxBtm: {
+    backgroundColor: "#838383ff",
+    padding: 30,
+    marginTop: 60,
+    // marginBottom: 10,
+    marginHorizontal: 40,
+    width: "90%",              // optional, keeps it responsive
+  },
+
+  headingText: {
+    color: "black",
+    fontFamily: "Boogaloo",
+    fontSize: 48,
+    textAlign: "center",
+  },
+});

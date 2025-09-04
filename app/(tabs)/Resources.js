@@ -1,6 +1,7 @@
 import * as ImagePicker from "expo-image-picker";
 import { useState } from "react";
 import { Button, Image, StyleSheet, TextInput, View } from "react-native";
+import BackgroundStyling from "./components/BackgroundStyling";
 import Heading from "./components/Heading";
 import SelectionButton from "./components/SelectionButton";
 
@@ -22,31 +23,32 @@ export default function Resources() {
 
     return (
 
-        
-        <View style={styles.container}>
-            <Heading title="Resources"></Heading>
+        <BackgroundStyling>
+            <View style={styles.container}>
+                <Heading title="Resources"></Heading>
 
-            <View style={styles.left}>
-                <SelectionButton title="Request" />
+                <View style={styles.left}>
+                    <SelectionButton title="Request" />
+                </View>
+
+
+                <View style={styles.right}>
+                    <SelectionButton title="Provide" />
+                </View>
+
+                <View>
+                <TextInput 
+                    placeholder="Enter input here"
+                    value={text}
+                    onChangeText={setText}
+                    style={styles.txtInput}
+                />
+                </View>
+
+                <Button title="Select a resource image" onPress={pickImage} color="#8a8a8aff" />
+                {image && <Image source={{ uri: image }} style={{ width: 200, height: 200, marginTop: 20 }} />}
             </View>
-
-
-            <View style={styles.right}>
-                <SelectionButton title="Provide" />
-            </View>
-
-            <View>
-            <TextInput 
-                placeholder="Enter input here"
-                value={text}
-                onChangeText={setText}
-                style={styles.txtInput}
-            />
-            </View>
-
-            <Button title="Select a resource image" onPress={pickImage} color="#8a8a8aff" />
-            {image && <Image source={{ uri: image }} style={{ width: 200, height: 200, marginTop: 20 }} />}
-        </View>
+        </BackgroundStyling>
         
     )
 }

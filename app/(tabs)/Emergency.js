@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import BackgroundStyling from "./components/BackgroundStyling";
 import Heading from "./components/Heading";
 
 const options = ["Wounds", "CPR", "Other"]
@@ -15,6 +16,7 @@ export default function Emergency() {
     };
 
     return (
+        <BackgroundStyling>
         <View>
         <Heading title="Emergency"></Heading>
         <TouchableOpacity style={styles.dropdown} onPress={() => setVisible(true)}>
@@ -30,6 +32,7 @@ export default function Emergency() {
             </View>
         )}
       </View>
+      </BackgroundStyling>
     )
 }
 

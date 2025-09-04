@@ -1,5 +1,6 @@
 import { StyleSheet, View } from "react-native";
 // import { WebView } from "react-native-webview";
+import BackgroundStyling from "./components/BackgroundStyling";
 import Heading from "./components/Heading";
 import SelectionButton from "./components/SelectionButton";
 
@@ -9,17 +10,19 @@ export default function Rebuilding() {
     const embedUrl = `https://www.youtube.com/watch?v=${videoId}`;
 
     return (
-        <View style={styles.container}>
-        <Heading title="Rebuilding"></Heading>
-        <SelectionButton title="Home Repair" />
-        <SelectionButton title="Agriculture" />
+        <BackgroundStyling>
+            <View style={styles.container}>
+            <Heading title="Rebuilding"></Heading>
+            <SelectionButton title="Home Repair" />
+            <SelectionButton title="Agriculture" />
 
-        {/* <WebView style={styles.video} 
-            
-            source={{ uri:embedUrl }}
-            allowsFullscreenVideo
-        /> */}
-        </View>
+            {/* <WebView style={styles.video} 
+                
+                source={{ uri:embedUrl }}
+                allowsFullscreenVideo
+            /> */}
+            </View>
+        </BackgroundStyling>
     )
 }
 

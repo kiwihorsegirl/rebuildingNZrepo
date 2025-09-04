@@ -1,7 +1,10 @@
+import BackgroundStyling from "./components/BackgroundStyling";
 import Heading from "./components/Heading";
 
 export default function Community() {
     return (
-        <Heading title="Community"></Heading>
+        <BackgroundStyling>
+            <Heading title="Community"></Heading>
+        </BackgroundStyling>
     )
 }
